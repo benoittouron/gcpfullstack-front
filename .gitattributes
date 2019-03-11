@@ -1,2 +1,2 @@
 * text=false
-*.gson -crlf
+*.json test eol=lf
