@@ -13,6 +13,6 @@ export class DataService {
   }
 
   getUsers() {
-    return this.http.get('https://reqres.in/api/users')
+    return this.http.get('https://your_project_name.appspot.com/people')
   }
 }
