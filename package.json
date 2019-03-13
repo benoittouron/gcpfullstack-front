@@ -4,10 +4,14 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "copy": "node_modules/.bin/copyfiles --flat dist/gcpfullstack-front/* dep/dist",
+    "clean": "node_modules/.bin/rimraf dep/dist",
+    "publish": "cd dep && gcloud app deploy -q",
+    "dep": "npm run clean && npm run build && npm run copy && npm run publish"
   },
   "private": true,
   "dependencies": {
@@ -23,7 +27,9 @@
     "core-js": "^2.5.4",
     "rxjs": "~6.3.3",
     "tslib": "^1.9.0",
-    "zone.js": "~0.8.26"
+    "zone.js": "~0.8.26",
+    "copyfiles": "~2.1.0",
+    "rimraf": "~2.6.3"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.13.0",

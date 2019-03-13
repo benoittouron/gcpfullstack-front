@@ -13,6 +13,6 @@ export class DataService {
   }
 
   getUsers() {
-    return this.http.get('https://your_project_name.appspot.com/people')
+    return this.http.get('https://crypto-handbook-233409.appspot.com/people')
   }
 }
